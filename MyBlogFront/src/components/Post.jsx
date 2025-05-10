@@ -50,8 +50,6 @@ const Post = ({ post }) => {
         <p><strong>Curso:</strong> {post.course}</p>
         <p><strong>Fecha:</strong> {new Date(post.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
       </div>
-
-      {/* Lista de comentarios */}
       <div className="comments-section">
         <h3>Comentarios</h3>
         {comments.length === 0 ? (
@@ -65,8 +63,6 @@ const Post = ({ post }) => {
           ))
         )}
       </div>
-
-      {/* Formulario para añadir comentario */}
       <div className="form-section">
         <h3>Añadir Comentario</h3>
         <form onSubmit={handleSubmit}>
