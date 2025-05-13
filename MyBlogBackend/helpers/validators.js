@@ -1,21 +1,60 @@
-import { body } from 'express-validator'  // Captura todo el body de la solicitud
-import { validateErrorWithoutImg } from './validate.error.js'  // Middleware para manejar errores
-import { existPost } from './db.validators.js'  // Validación de existencia de publicación
+import { body } from 'express-validator'  
+import { validateErrorWithoutImg } from './validate.error.js'
+import { existPost } from './db.validators.js' 
+import { check } from 'express-validator'
 
-// Validación para la creación de una publicación
+// Validador para agregar una publicación
 export const addPostValidator = [
-    body('title', 'Title is required').notEmpty().isLength({ max: 100 }),
-    body('content', 'Content is required').notEmpty(),
-    body('course', 'Course is required').notEmpty(),
-    validateErrorWithoutImg,
+  check('title')
+    .notEmpty()
+    .withMessage('Title is required')
+    .isLength({ min: 3 })
+    .withMessage('Title must be at least 3 characters long'),
+  check('content')
+    .notEmpty()
+    .withMessage('Content is required')
+    .isLength({ min: 10 })
+    .withMessage('Content must be at least 10 characters long'),
+  check('course')
+    .notEmpty()
+    .withMessage('Course is required'),
+  check('bimestre')
+    .notEmpty()
+    .withMessage('Bimestre is required')
+    .isIn(['Bimestre 1', 'Bimestre 2', 'Bimestre 3', 'Bimestre 4', 'Proyecto Final'])
+    .withMessage('Bimestre must be one of: Bimestre 1, Bimestre 2, Bimestre 3, Bimestre 4, Proyecto Final'),
+  check('githublink')
+    .notEmpty()
+    .withMessage('GitHub link is required')
+    .isURL()
+    .withMessage('GitHub link must be a valid URL'),
 ]
 
-// Validación para la actualización de una publicación
+// Validador para actualizar una publicación
 export const updatePostValidator = [
-    body('title', 'Title is required').optional().notEmpty().isLength({ max: 100 }),
-    body('content', 'Content is required').optional().notEmpty(),
-    body('course', 'Course is required').optional().notEmpty(),
-    validateErrorWithoutImg,
+  check('title')
+    .notEmpty()
+    .withMessage('Title is required')
+    .isLength({ min: 3 })
+    .withMessage('Title must be at least 3 characters long'),
+  check('content')
+    .notEmpty()
+    .withMessage('Content is required')
+    .isLength({ min: 10 })
+    .withMessage('Content must be at least 10 characters long'),
+  check('course')
+    .notEmpty()
+    .withMessage('Course is required'),
+  check('bimestre')
+    .notEmpty()
+    .withMessage('Bimestre is required')
+    .isIn(['Bimestre 1', 'Bimestre 2', 'Bimestre 3', 'Bimestre 4', 'Proyecto Final'])
+    .withMessage('Bimestre must be one of: Bimestre 1, Bimestre 2, Bimestre 3, Bimestre 4, Proyecto Final'),
+  check('githublink')
+    .notEmpty()
+    .withMessage('GitHub link is required')
+    .isURL()
+    .withMessage('GitHub link must be a valid URL'),
 ]
 
 // Validación para la creación de un comentario
