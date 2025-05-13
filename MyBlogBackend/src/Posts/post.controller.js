@@ -54,19 +54,16 @@ export const getPostById = async (req, res) => {
 
 // Obtener publicaciones por curso
 export const getPostsByCourse = async (req, res) => {
-    try {
-        const { course } = req.params
-        const posts = await Post.find({ course }).sort({ createdAt: -1 })
-
-        if (posts.length === 0) {
-            return res.status(404).json({ success: false, message: 'No posts found for this course' })
-        }
-
-        return res.status(200).json({ success: true, message: 'Posts found', posts })
-    } catch (err) {
-        console.error(err)
-        return res.status(500).json({ success: false, message: 'Error retrieving posts', error: err.message })
-    }
+  try {
+    const { course } = req.params
+    console.log(`Searching for course: ${course}`)
+    const posts = await Post.find({ course: { $regex: new RegExp(course, 'i') } })
+    console.log(`Found posts: ${JSON.stringify(posts)}`)
+    res.status(200).json({ posts })
+  } catch (error) {
+    console.error('Error in getPostsByCourse:', error)
+    res.status(500).json({ message: 'Error fetching posts by course', error })
+  }
 }
 
 // Nueva función: Obtener publicaciones por bimestre

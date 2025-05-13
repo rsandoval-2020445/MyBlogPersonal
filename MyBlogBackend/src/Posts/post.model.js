@@ -15,7 +15,7 @@ const postSchema = new Schema(
         course: {
             type: String,
             required: [true, 'Course is required'],
-            enum: ['Course 1', 'Course 2', 'Course 3'],
+            enum: ['Taller I', 'Taller II', 'Taller III'],
             message: '{VALUE} is not a valid course'
         },
         bimestre: {

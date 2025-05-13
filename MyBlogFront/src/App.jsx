@@ -4,25 +4,20 @@ import CoursePage from './pages/CoursePage'
 
 const App = () => (
   <div>
-    {/* Barra de Navegación */}
     <nav>
       <div className="nav-container">
-        <Link to="/"><h1>Blog Kinal</h1></Link>
+        <Link to="/"><h1>Portafolio de Proyectos</h1></Link>
         <div className="nav-links">
-          <Link to="/course1">Course 1</Link>
-          <Link to="/course2">Course 2</Link>
-          <Link to="/course3">Course 3</Link>
+          <Link to="/course/Taller-I">Taller I</Link>
+          <Link to="/course/Taller-II">Taller II</Link>
+          <Link to="/course/Taller-III">Taller III</Link>
         </div>
       </div>
     </nav>
-
-    {/* Contenido Principal */}
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/course1" element={<CoursePage course="Course 1" />} />
-        <Route path="/course2" element={<CoursePage course="Course 2" />} />
-        <Route path="/course3" element={<CoursePage course="Course 3" />} />
+        <Route path="/course/:course" element={<CoursePage />} />
       </Routes>
     </main>
   </div>

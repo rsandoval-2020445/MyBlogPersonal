@@ -12,4 +12,4 @@ const renderApp = () => {
   )
 }
 
-renderApp()
+renderApp() 
