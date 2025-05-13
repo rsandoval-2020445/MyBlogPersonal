@@ -3,13 +3,13 @@ import Post from './post.model.js'
 // Crear una publicación
 export const createPost = async (req, res) => {
     try {
-        const { title, content, course } = req.body
+        const { title, content, course, bimestre, githublink } = req.body
 
-        if (!title || !content || !course) {
+        if (!title || !content || !course || !bimestre || !githublink) {
             return res.status(400).json({ success: false, message: 'All fields are required' })
         }
 
-        const newPost = new Post({ title, content, course })
+        const newPost = new Post({ title, content, course, bimestre, githublink })
         await newPost.save()
 
         return res.status(201).json({ success: true, message: 'Post created successfully', newPost })
@@ -69,19 +69,36 @@ export const getPostsByCourse = async (req, res) => {
     }
 }
 
+// Nueva función: Obtener publicaciones por bimestre
+export const getPostsByBimestre = async (req, res) => {
+    try {
+        const { bimestre } = req.params
+        const posts = await Post.find({ bimestre }).sort({ createdAt: -1 })
+
+        if (posts.length === 0) {
+            return res.status(404).json({ success: false, message: 'No posts found for this bimestre' })
+        }
+
+        return res.status(200).json({ success: true, message: 'Posts found', posts })
+    } catch (err) {
+        console.error(err)
+        return res.status(500).json({ success: false, message: 'Error retrieving posts by bimestre', error: err.message })
+    }
+}
+
 // Actualizar una publicación
 export const updatePost = async (req, res) => {
     try {
         const { id } = req.params
-        const { title, content, course } = req.body
+        const { title, content, course, bimestre, githublink } = req.body
 
-        if (!title || !content || !course) {
+        if (!title || !content || !course || !bimestre || !githublink) {
             return res.status(400).json({ success: false, message: 'All fields are required' })
         }
 
         const updatedPost = await Post.findByIdAndUpdate(
             id,
-            { title, content, course, updatedAt: Date.now() }, // Actualiza manualmente
+            { title, content, course, bimestre, githublink, updatedAt: Date.now() },
             { new: true }
         )
 
