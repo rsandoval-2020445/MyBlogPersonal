@@ -18,6 +18,15 @@ const postSchema = new Schema(
             enum: ['Course 1', 'Course 2', 'Course 3'],
             message: '{VALUE} is not a valid course'
         },
+        bimestre: {
+            type: String, 
+            required: [true, 'Bimestre is required'],
+            enum: ['Bimestre 1', 'Bimestre 2', 'Bimestre 3', 'Bimestre 4', 'Proyecto Final'],
+        },
+        githublink: {
+            type: String, 
+            required: true
+        },
         createdAt: {
             type: Date, 
             default: Date.now
