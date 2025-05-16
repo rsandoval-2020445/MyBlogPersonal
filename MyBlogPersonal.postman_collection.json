@@ -1,0 +1,1061 @@
+{
+	"info": {
+		"_postman_id": "7c7649d8-5a37-4692-8dff-c67cde06ac33",
+		"name": "MyBlogPersonal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37951952"
+	},
+	"item": [
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "getCommentId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/comments/681e78d9eef8095aadb00cc4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"comments",
+								"681e78d9eef8095aadb00cc4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"author\": \"Juan Anibal\",\r\n  \"content\": \"Excelente refresco!\",\r\n  \"postId\": \"681e8905d88263802546da5a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "getPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/posts/681e77c8eef8095aadb00cb7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"posts",
+								"681e77c8eef8095aadb00cb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCourseId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/posts/course/Taller I",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"posts",
+								"course",
+								"Taller I"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePost",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"\",\r\n  \"content\": \"\",\r\n  \"course\": \"\",\r\n  \"bimestre\": \"\",\r\n  \"githublink\": \"\",\r\n  \"createdAt\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/posts/682518a387f26f511ece4d7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"posts",
+								"682518a387f26f511ece4d7f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePost",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/posts/681e77c8eef8095aadb00cb7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"posts",
+								"681e77c8eef8095aadb00cb7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts Cuarto",
+			"item": [
+				{
+					"name": "Bimestre 2",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Calculadora ProMax en Java\",\r\n  \"content\": \"Una calculadora avanzada por consola en Java que ofrece más de 15 funciones matemáticas, desde operaciones básicas hasta raíces, logaritmos, ecuaciones cuadráticas y área bajo la curva.\",\r\n  \"course\": \"Taller I\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/ProjectoBimDos2023.git\",\r\n  \"createdAt\": \"2023-04-11T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bimestre 3",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Sistema de Gestión Escolar\",\r\n  \"content\": \"Una aplicación de escritorio desarrollada en JavaFX y MySQL para administrar estudiantes, cursos y profesores. Permite registrar, editar y eliminar datos, así como gestionar roles y visualizar información académica.\",\r\n  \"course\": \"Taller I\",\r\n  \"bimestre\": \"Bimestre 3\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/SistemaDeColegioB3_2023.git\",\r\n  \"createdAt\": \"2023-07-12T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Serpientes y Escaleras\",\r\n  \"content\": \"Un juego clásico de Serpientes y Escaleras desarrollado en Java. Permite que varios jugadores lancen dados y avancen por el tablero, encontrando serpientes que los hacen retroceder y escaleras que los hacen avanzar. Ideal para reforzar lógica y estructuras de datos.\",\r\n  \"course\": \"Taller I\",\r\n  \"bimestre\": \"Bimestre 3\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/SnakesAndLaddersB3_2023.git\",\r\n  \"createdAt\": \"2023-07-12T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bimeste 4",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Sistema de Colegio (Base de Datos)\",\r\n  \"content\": \"Una base de datos relacional desarrollada en MySQL para gestionar estudiantes, cursos, inscripciones y calificaciones. Incluye estructuras normalizadas, relaciones entre tablas y consultas SQL básicas y avanzadas.\",\r\n  \"course\": \"Taller I\",\r\n  \"bimestre\": \"Bimestre 4\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/SistemaDeColegioBD_B3_2023.git\",\r\n  \"createdAt\": \"2023-09-13T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Proyecto Final",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Sistema de Chumpas (CRUD en Java)\",\r\n  \"content\": \"Aplicación de escritorio desarrollada en Java que permite registrar, actualizar, eliminar y consultar datos de chumpas (tallas, colores, precios y stock). Utiliza una interfaz gráfica sencilla con validaciones básicas.\",\r\n  \"course\": \"Taller I\",\r\n  \"bimestre\": \"Proyecto Final\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/SistemaChumpas2023Final.git\",\r\n  \"createdAt\": \"2023-10-10T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Área Bajo la Curva (Java)\",\r\n  \"content\": \"Programa en Java que calcula el área bajo una curva usando el método del trapecio. Permite al usuario ingresar los límites de integración, número de subintervalos y realiza el cálculo de forma interactiva.\",\r\n  \"course\": \"Taller I\",\r\n  \"bimestre\": \"Proyecto Final\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/AreaBajolaCurvaJava.git\",\r\n  \"createdAt\": \"2023-10-10T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Base de Datos - Taller de Mecánica\",\r\n  \"content\": \"Diseño y desarrollo de una base de datos en MySQL para administrar clientes, vehículos, servicios realizados y repuestos utilizados en un taller mecánico. Incluye relaciones entre tablas, integridad referencial y consultas SQL.\",\r\n  \"course\": \"Taller I\",\r\n  \"bimestre\": \"Proyecto Final\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/TallerMecanica2023.git\",\r\n  \"createdAt\": \"2023-10-10T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Posts Quinto",
+			"item": [
+				{
+					"name": "Bimestre 1",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Gestión de Locales Comerciales\",\r\n  \"content\": \"Sistema desarrollado en Java para gestionar locales comerciales en un centro comercial. Permite registrar inquilinos, contratos de alquiler, pagos mensuales y estado de ocupación. Incluye interfaz gráfica amigable y conexión con base de datos.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 1\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/GestionLocales2024B1.git\",\r\n  \"createdAt\": \"2024-02-22T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Sistema de Stock de Ventas\",\r\n  \"content\": \"Aplicación desarrollada en Java para llevar el control de inventario y ventas de productos. Permite registrar productos, modificar cantidades en stock, procesar ventas y generar reportes básicos. Ideal para pequeños negocios que necesitan una solución sencilla de control de existencias.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 1\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/StockVentas.git\",\r\n  \"createdAt\": \"2024-02-22T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Primer Programa en Java\",\r\n  \"content\": \"Este programa en Java permite realizar operaciones básicas como suma y resta entre dos números ingresados por el usuario. Es un ejercicio introductorio para familiarizarse con la sintaxis del lenguaje, el uso de variables, condicionales y entrada/salida de datos.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 1\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/PrimerProgramaJava.git\",\r\n  \"createdAt\": \"2025-03-01T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Calculadora Básica en Java\",\r\n  \"content\": \"Aplicación de consola en Java que permite realizar operaciones básicas como suma, resta, multiplicación y división. Utiliza estructuras condicionales y manejo de entradas del usuario para seleccionar la operación deseada. Ideal como práctica para fortalecer conceptos fundamentales de programación.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 1\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/CalculadoraJava.git\",\r\n  \"createdAt\": \"2025-03-02T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bimestre 2",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"KinalStore - Supermercado en Línea\",\r\n  \"content\": \"Aplicación desarrollada en Java que simula una tienda en línea tipo supermercado. Permite a los usuarios navegar por productos, agregarlos al carrito, realizar compras simuladas y ver el historial de pedidos. Ideal para aprender conceptos de listas, objetos y estructuras de datos en Java orientado a comercio electrónico.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/KinalStore2024.git\",\r\n  \"createdAt\": \"2025-03-02T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Calculadora Gráfica en JavaFX\",\r\n  \"content\": \"Aplicación de escritorio desarrollada con JavaFX que simula una calculadora con interfaz gráfica amigable. Permite realizar operaciones básicas como suma, resta, multiplicación y división con botones interactivos. Ideal para reforzar el uso de eventos, diseño de interfaces y lógica en Java.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/CalculadorGrafica.git\",\r\n  \"createdAt\": \"2025-03-02T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Diseño Singleton Gráfico en Java\",\r\n  \"content\": \"Ejemplo práctico del patrón de diseño Singleton implementado con una interfaz gráfica en Java. La aplicación asegura que solo exista una instancia activa de una ventana o clase, mostrando su uso en un entorno visual. Útil para aprender sobre patrones de diseño aplicados en interfaces gráficas.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/SingletonGrafico.git\",\r\n  \"createdAt\": \"2025-03-03T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Base de Datos MySQL - KinalStore\",\r\n  \"content\": \"Diseño de base de datos para KinalStore, un supermercado en línea. Incluye tablas para productos, usuarios, categorías, pedidos y detalles de compra. Optimizada para manejar registros de inventario, historial de pedidos y autenticación de usuarios, facilitando la gestión de un sistema de ventas en línea.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/DBKinalStore.git\",\r\n  \"createdAt\": \"2025-03-03T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bimestre 3",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Ventas Java EE\",\r\n  \"content\": \"Aplicación empresarial construida con Java EE para gestionar ventas, clientes y productos. Utiliza tecnologías como Servlets, JSP y JDBC. Pensado para ambientes empresariales donde se requiere manejo de usuarios, transacciones y reportes de forma robusta y escalable.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 3\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/VentasJavaEE2024.git\",\r\n  \"createdAt\": \"2025-03-03T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Sitio Web sobre Judo\",\r\n  \"content\": \"Proyecto de sitio web informativo sobre el deporte Judo, desarrollado con HTML y CSS. Incluye secciones como historia, técnicas, categorías, y galería de imágenes. Enfocado en diseño responsivo, navegación amigable y estructura clara para informar a los visitantes sobre esta disciplina.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 3\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/PaginasDeJudo.git\",\r\n  \"createdAt\": \"2025-03-03T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Panadería Enchantée\",\r\n  \"content\": \"Sistema desarrollado con Java EE para la gestión completa de una panadería. Incluye manejo de productos, ventas, inventario y administración de clientes, todo con una arquitectura robusta y escalable.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 3\",\r\n  \"githublink\": \"https://github.com/drodas-2021170/PanaderiaEnchantee.git\",\r\n  \"createdAt\": \"2025-05-14T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bimestre 4",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Ejemplos con Spring Boot\",\r\n  \"content\": \"Proyecto educativo que contiene múltiples ejemplos desarrollados con Spring Boot. Incluye demostraciones de controladores REST, conexión a bases de datos con JPA, uso de dependencias, seguridad básica y manejo de rutas. Ideal para comprender cómo construir aplicaciones web modernas usando este framework.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 4\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/EjemSpringBoot2024.git\",\r\n  \"createdAt\": \"2025-03-03T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Juego del Ahorcado en JavaScript\",\r\n  \"content\": \"Aplicación web desarrollada con JavaScript, HTML y CSS que simula el clásico juego del ahorcado. Permite al usuario adivinar palabras letra por letra, mostrando visualmente el progreso y los errores. Ideal para practicar lógica de programación y manipulación del DOM.\",\r\n  \"course\": \"Taller II\",\r\n  \"bimestre\": \"Bimestre 4\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/JuegoDeAhorcado.git\",\r\n  \"createdAt\": \"2025-03-04T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Posts Sexto",
+			"item": [
+				{
+					"name": "Bimestre 1",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Tienda de Compras en NodeJS\",\r\n  \"content\": \"Aplicación backend desarrollada con NodeJS para gestionar una tienda en línea. Incluye funcionalidades esenciales como autenticación de usuarios, manejo de productos, procesamiento de compras y almacenamiento de datos. Ideal para aprender arquitectura REST y manejo de bases de datos con MongoDB.\",\r\n  \"course\": \"Taller III\",\r\n  \"bimestre\": \"Bimestre 1\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/FinalProjectBim1-2025.git\",\r\n  \"createdAt\": \"2025-03-04T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"CoperexApi\",\r\n  \"content\": \"API desarrollada en NodeJS enfocada en la generación y manejo de reportes para empresas. Permite la gestión de información empresarial de forma estructurada, con soporte para múltiples endpoints que facilitan la obtención y actualización de datos relevantes. Proyecto ideal para comprender la creación de APIs RESTful con NodeJS y Express.\",\r\n  \"course\": \"Taller III\",\r\n  \"bimestre\": \"Bimestre 1\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/CoperexApi.git\",\r\n  \"createdAt\": \"2025-03-05T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Sistema de Publicaciones y Comentarios\",\r\n  \"content\": \"Aplicación web desarrollada en NodeJS que permite a los usuarios realizar publicaciones y dejar comentarios en ellas. Ideal para practicar la creación de APIs RESTful, manejo de relaciones entre colecciones y autenticación de usuarios. Este proyecto también implementa operaciones CRUD completas para publicaciones y comentarios.\",\r\n  \"course\": \"Taller III\",\r\n  \"bimestre\": \"Bimestre 1\",\r\n  \"githublink\": \"https://github.com/rsandoval-2020445/FeedbackSystem.git\",\r\n  \"createdAt\": \"2025-03-06T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\r\n    \"title\": \"Proyecto de Páginas Web Varias\",\r\n    \"content\": \"Conjunto de tres páginas web desarrolladas en HTML y CSS: un rediseño de la página web del colegio Kinal, una autobiografía personal, y una página informativa sobre el deporte Judo. Todos con diseño responsivo y estructura clara.\",\r\n    \"course\": \"Taller III\",\r\n    \"bimestre\": \"Bimestre 1\",\r\n    \"githublink\": \"https://github.com/rsandoval-2020445/PaginasWeb.git\",\r\n    \"createdAt\": \"2025-03-06T00:00:00.000Z\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\r\n    \"title\": \"Sistema de Adopción de Mascotas\",\r\n    \"content\": \"Aplicación desarrollada en NodeJS que permite registrar mascotas, gestionar adopciones y visualizar perfiles. Incluye autenticación, panel administrativo y operaciones CRUD para usuarios y animales. Ideal para organizaciones de rescate animal.\",\r\n    \"course\": \"Taller III\",\r\n    \"bimestre\": \"Bimestre 1\",\r\n    \"githublink\": \"https://github.com/rsandoval-2020445/AdoptionSystem.git\",\r\n    \"createdAt\": \"2025-03-06T00:00:00.000Z\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bimestre 2",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Gestión de Hoteles\",\r\n  \"content\": \"Aplicación full-stack desarrollada con React en el frontend y NodeJS en el backend para administrar reservas, habitaciones y clientes de un hotel. Permite gestionar disponibilidad, crear y modificar reservas, y llevar el control de los servicios ofrecidos.\",\r\n  \"course\": \"Taller III\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/dreyes-2022433/Gestion-Hotelera.git\",\r\n  \"createdAt\": \"2025-05-14T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Gestión de Almacenadora\",\r\n  \"content\": \"Sistema full-stack con React y NodeJS para administrar inventarios, entradas y salidas de productos en un almacén. Permite registrar productos, controlar stock, gestionar proveedores y generar reportes de movimientos de mercancía.\",\r\n  \"course\": \"Taller III\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/dreyes-2022433/Almacenadora.git\",\r\n  \"createdAt\": \"2025-05-14T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Ejercicios en JavaScript y React\",\r\n  \"content\": \"Colección de ejercicios prácticos para aprender y reforzar conceptos de JavaScript y React. Incluye ejemplos interactivos, manejo de estado, componentes funcionales y hooks.\",\r\n  \"course\": \"Taller III\",\r\n  \"bimestre\": \"Bimestre 2\",\r\n  \"githublink\": \"https://github.com/dreyes-2022433/Ejercicios.git\",\r\n  \"createdAt\": \"2025-05-14T00:00:00.000Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3626/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3626",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
