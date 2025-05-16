@@ -41,12 +41,54 @@ const CoursePage = () => {
   }
 
   return (
-    <div className="course-page">
-      <h1>{formattedCourse}</h1>
-      <p>Explora los proyectos de este taller. Usa el filtro para verlos por bimestre.</p>
-      <div className="filter-section">
-        <label>Filtrar por: </label>
-        <select value={selectedBimestre} onChange={(e) => handleFilterChange(e.target.value)}>
+    <div className="course-page" style={{ 
+      fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+      backgroundColor: '#F8F7F0', 
+      minHeight: '100vh',
+      padding: '20px',
+      color: '#333'
+    }}>
+      <h1 style={{ 
+        fontSize: '2.5rem', 
+        color: '#222B52', 
+        textAlign: 'center', 
+        marginBottom: '20px',
+        textTransform: 'uppercase',
+        letterSpacing: '2px'
+      }}>
+        {formattedCourse}
+      </h1>
+      <p style={{ 
+        textAlign: 'center', 
+        color: '#7F858D', 
+        marginBottom: '30px', 
+        fontSize: '1.1rem'
+      }}>
+        Explora los proyectos de este taller. Usa el filtro para verlos por bimestre.
+      </p>
+      <div className="filter-section" style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        marginBottom: '30px'
+      }}>
+        <label style={{ 
+          marginRight: '10px', 
+          fontWeight: 'bold', 
+          color: '#222B52' 
+        }}>
+          Filtrar por: 
+        </label>
+        <select 
+          value={selectedBimestre} 
+          onChange={(e) => handleFilterChange(e.target.value)}
+          style={{ 
+            padding: '8px', 
+            borderRadius: '5px', 
+            border: '1px solid #ddd', 
+            backgroundColor: '#fff',
+            cursor: 'pointer'
+          }}
+        >
           <option value="Todos">Todos</option>
           <option value="Bimestre 1">Bimestre 1</option>
           <option value="Bimestre 2">Bimestre 2</option>
@@ -56,11 +98,17 @@ const CoursePage = () => {
         </select>
       </div>
       {loading ? (
-        <p>Cargando proyectos...</p>
+        <p style={{ textAlign: 'center', color: '#7F858D' }}>Cargando proyectos...</p> 
       ) : filteredPosts.length === 0 ? (
-        <p className="no-posts">No hay proyectos disponibles para este bimestre.</p>
+        <p className="no-posts" style={{ textAlign: 'center', color: '#B25640' }}> 
+          No hay proyectos disponibles para este bimestre.
+        </p>
       ) : (
-        <div className="posts-container">
+        <div className="posts-container" style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', 
+          gap: '20px'
+        }}>
           {filteredPosts.map((post) => <Post key={post._id} post={post} />)}
         </div>
       )}

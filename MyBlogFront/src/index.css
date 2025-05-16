@@ -57,7 +57,7 @@ nav {
 
 main {
   max-width: 1200px;
-  margin: 20px auto; /* Centrado horizontal */
+  margin: 0 auto; /* Centrado horizontal */
   padding: 0; /* Eliminamos el padding para evitar desplazamientos */
   width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
   box-sizing: border-box;
@@ -230,15 +230,20 @@ main {
 }
 
 .post a {
-  color: #3182CE;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #0C3B2E;
+  color: white;
+  border-radius: 5px;
   font-size: 14px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .post a:hover {
-  color: #2B6CB0;
-  text-decoration: underline;
+  background-color: #1a5a47;
+  text-decoration: none;
 }
 
 /* Asegurar que no haya tablas implícitas */
@@ -252,6 +257,7 @@ main {
   border-top: 1px solid #E2E8F0;
   padding-top: 20px;
   margin-top: 20px;
+  text-align: left;
 }
 
 .comments-section h3 {
@@ -260,7 +266,7 @@ main {
   margin-bottom: 15px;
   color: #2D3748;
   display: flex;
-  align-items: center;
+  align-items: right;
   gap: 10px;
 }
 
@@ -273,6 +279,7 @@ main {
   border-left: 4px solid #6D9773;
   padding-left: 15px;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .comment p {
@@ -291,7 +298,9 @@ main {
 }
 
 .form-section {
-  margin-top: 20px;
+  margin-top: 30px; /* Más espacio arriba */
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
 }
 
 .form-section h3 {
@@ -374,27 +383,29 @@ button:disabled {
 
 .course-page .posts-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 3 columnas en pantallas grandes, ajusta a menos columnas en pantallas pequeñas */
   gap: 25px; /* Espaciado entre tarjetas */
-  max-width: 1200px; /* Limitamos el ancho máximo del contenedor */
-  margin: 0 auto; /* Centramos el contenedor */
-  padding: 0; /* Eliminamos el padding para evitar desplazamientos */
-  width: 100%; /* Aseguramos que ocupe todo el ancho disponible hasta el max-width */
-  box-sizing: border-box; /* Aseguramos que el padding y border no afecten el ancho */
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 0 20px; /* Añade padding horizontal */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  box-sizing: border-box; /* Asegura que el padding y border no afecten el ancho */
+  justify-items: center; /* Asegura que los ítems estén centrados en sus celdas */
 }
+
 
 /* Responsividad */
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 10px;
+  .course-page .posts-container {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, usa una sola columna */
   }
+}
 
   .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+    display: flex; /* Alinea los enlaces en una fila */
+    gap: 20px; /* Espacio entre los enlaces */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si el ancho es reducido */
+  } 
 
   main {
     padding: 0;
@@ -443,7 +454,7 @@ button:disabled {
   .post-description {
     font-size: 14px;
   }
-}
+
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .course-page .posts-container {
