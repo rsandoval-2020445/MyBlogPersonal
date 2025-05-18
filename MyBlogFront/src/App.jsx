@@ -1,5 +1,5 @@
 import { Routes, Route, Link, Navigate } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/Home' // Verifica que esta ruta sea correcta
 import CoursePage from './pages/CoursePage'
 
 const App = () => (
@@ -22,7 +22,7 @@ const App = () => (
         maxWidth: '1200px', 
         margin: '0 auto'
       }}>
-        <Link to="/home" style={{ // Cambiar de "/" a "/home"
+        <Link to="/home" style={{ 
           color: '#F8F7F0',
           textDecoration: 'none', 
           fontSize: '1.5rem', 
@@ -76,7 +76,7 @@ const App = () => (
     </nav>
     <main style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
       <Routes>
-        <Route path="/" element={<Navigate to="/course/Taller-I" />} />
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/course/:course" element={<CoursePage />} />
       </Routes>
